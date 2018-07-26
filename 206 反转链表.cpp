@@ -13,6 +13,7 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+//就地逆置法
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -25,3 +26,25 @@ public:
     }
 	return new_head;//返回新链表头结点
 };
+
+//头插法
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+		ListNode temp_head(0);
+		while(head){
+			ListNode *next=head->next;
+			head->next=temp_head.next;
+			temp_head.next=head;
+			head=next;
+		}
+		return temp_head.next;
+	}
+};
+//比较
+1、
+	ListNode temp_head(0);//临时节点
+	ListNode *new_head=NULL;//指针变量
+
+
+

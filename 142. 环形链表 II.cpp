@@ -69,7 +69,7 @@ public:
 	}
 	if (meet == NULL){
 		return NULL;
-	}
+	}//其实这段if判断确实没什么用
 	while (head&&meet){
 		if (head == meet){
 				return head;
